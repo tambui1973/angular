@@ -13,4 +13,6 @@ table {
 .container {
   height: 400px;
   width: 200px;
+  color: white;
+  background: white;
 }
