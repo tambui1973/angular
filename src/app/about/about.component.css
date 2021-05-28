@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+}
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: maroon 2px solid;
+  box-sizing: border-box;
+  height: 100px;
+}
+
+.container {
+  height: 400px;
+}

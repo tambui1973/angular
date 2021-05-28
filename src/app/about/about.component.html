@@ -1,0 +1,74 @@
+<p>about works!</p>
+<!--<div>
+<mat-form-field>
+  <input matInput (keyup)='applyFilter($any($event.target).value)' placeholder="Filter">
+</mat-form-field>
+</div>-->
+
+<div class="mat-elevation-z8">
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<cdk-virtual-scroll-viewport itemSize="100" class="container">
+  <div *cdkVirtualFor="let number of numbers" class="number">
+    {{number}}
+  </div>
+</cdk-virtual-scroll-viewport>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints</p>
+    <label>Server Name</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerName">
+    <label>Server Content</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerContent">
+    <br>
+    <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+    <button class="btn btn-primary" (click)="onAddBluePrint()">Add Server BluePrint</button>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints</p>
+    <label>Server Name</label>
+    <input type="text" class="form-control" #serverNameInput>
+
+    <button class="btn btn-primary" (click)="onAddServerName(serverNameInput)">Add Server</button>
+
+  </div>
+
+
+<div>
+  <p>{{serverCreated.name}}</p>
+</div>

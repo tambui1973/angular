@@ -1,0 +1,24 @@
+.nav-height {
+  min-height: 50px;
+  height: 50px;
+}
+
+.content-move-right {
+  margin-left: 170px;
+  transition: ease 0.2s;
+}
+
+.content-move-left {
+  margin-left: 10px;
+  transition: ease 0.1s;
+}
+
+.active-link {
+  background: orangered;
+  color: white;
+}
+
+.mat-button:hover {
+  background: blue;
+  color: white;
+}

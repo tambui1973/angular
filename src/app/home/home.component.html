@@ -1,0 +1,96 @@
+<p class="myfirstcss">home works!</p>
+<p>Chao ban {{name | uppercase}}</p>
+<span *ngIf="age<18; then condition1;else condition2"></span>
+<br>
+<ng-template #condition1><span appBold>Banj duoi {{age}} tuoi</span></ng-template>
+<ng-template #condition2>Ban tren {{age}} tuoi</ng-template>
+
+<span *ngIf="age>=18">Ban tren 18 tuoi</span>
+
+<p>Danh sach xe</p><br>
+<div *ngFor="let vehicle of vehicles">
+  <li>{{vehicle}}</li>
+</div>
+<div>
+  <select >
+  <option *ngFor="let vehicle of vehicles">{{vehicle}}</option>
+  </select>
+</div>
+
+<input [(ngModel)]="name" (input)="getName($event)"/>
+
+<button (click)="tangtuoi()">Tang tuoi</button>
+
+Comments:<br/>
+<span>{{comments|json}}</span>
+
+Posts:<br/>
+<span>{{posts|json}}</span>
+
+<br>
+<button (click)="addPost()"> Them Post Moi</button>
+
+<table id="customers" style="border-collapse: collapse;">
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+  <tr *ngFor="let post of posts">
+    <td>id</td>
+    <td>title</td>
+    <td>author</td>
+  </tr>
+</table>
+
+<button mat-raised-button>Hello WOrld</button>
+<div>
+  <mat-icon color="primary">grade</mat-icon>
+</div>
+
+<div>
+  <span matBadge="5">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgePosition="below before" matBadgeSize="large">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgePosition="below after">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgePosition="above before">Notifications</span>
+</div>
+
+<mat-progress-spinner value="50"></mat-progress-spinner>
+<mat-spinner></mat-spinner>
+<mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Front End</button>
+  <button mat-menu-item>Backend</button>
+</mat-menu>
+
+<button class="center" mat-flat-button [matMenuTriggerFor]="appMenu" [disabled]="false" (click)="onClick($event)">Menu</button>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>Angular</button>
+  <button mat-menu-item>React</button>
+  <button mat-menu-item>Vue</button>
+</mat-menu>
+
+
+<div class="panel-heading">{{srvElement.name}}</div>
+<div class="panel-body">
+  <p>
+    <strong *ngIf="srvElement.type==='server'" style="color:red">{{srvElement.content}}</strong>
+    <em *ngIf="srvElement.type==='blueprint'">{{srvElement.content}}</em>
+  </p>
+</div>
+
+
+
+<div class="container">
+  <button class="btn" [class.btn-primary] = "isPrimary">ClickMe</button>
+  <button [style.color] = "isActive ? 'red' : 'blue'">Hi Color</button>
+</div>

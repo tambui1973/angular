@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tutorial';
+
+
+  @ViewChild('sidenav')
+  sidenav!: MatSidenav;
+  public isOpen = false;
+
+  public closeLeftSide(){
+    this.isOpen = false;
+  }
+
+  public openLeftSide(){
+    this.isOpen = !this.isOpen;
+    this.sidenav.toggle();
+  }
 }

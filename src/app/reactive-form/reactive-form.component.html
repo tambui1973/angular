@@ -1,0 +1,15 @@
+<p>reactive-form works!</p>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input type="text" formControlName="name" required/>
+  </label>
+  <span *ngIf="profileForm.controls.name.invalid" class="errorMessage">* Can phai nhap ten</span>
+  <br/>
+  <label>
+    Age:
+    <input type="text" formControlName="age" required />
+  </label>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+
